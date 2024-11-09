@@ -1,46 +1,41 @@
 const { Mongoose, default: mongoose } = require("mongoose");
 
-const incomeSchema= new mongoose.Schema({
-    title:{
-        type:String,
-        required:true,
-        trim:true,
-        maxLength:50
+const incomeSchema = new mongoose.Schema({
+    title: {
+        type: String,
+        required: true,
+        trim: true,
+        maxLength: 50
 
     },
-    amount:{
-        type:Number,
-        required:true,
-        trim:true,
-        maxLength:20
+    amount: {
+        type: Number,
+        required: true,
+        trim: true,
+        maxLength: 20
 
     },
-    type:{
-        type:String,
-        default:'income'
+    date: {
+        type: Date,
+        required: true,
+        trim: true,
+        maxLength: 20
 
     },
-    date:{
-        type:Date,
-        required:true,
-        trim:true,
-        maxLength:20
-
-    },   
-    catagory:{
-        type:String,
-        required:true,
-        trim:true
-
-    },   
-    discription:{
-        type:String,
-        required:true,
-        trim:true,
-        maxLength:50
+    catagory: {
+        type: String,
+        required: true,
+        trim: true
 
     },
-},{timestamps:true})
+    discription: {
+        type: String,
+        required: true,
+        trim: true,
+        maxLength: 50
 
-module.exports=mongoose.model('income',incomeSchema)
+    },
+}, { timestamps: true })
+
+module.exports = mongoose.model('income', incomeSchema)
 
